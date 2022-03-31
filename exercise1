@@ -1,0 +1,15 @@
+--Exercise--
+
+What was the total female population (x 1,000) in 2017? Store your answer in a variable named female_population.
+
+Use the canada.csv dataset.
+
+--Solution--
+
+import pandas as pd 
+df = pd.read_csv('canada.csv')
+df1= df[(df['year']== 2017) & (df['sex']== 'Females')]  
+female_population = df1['population (x 1,000)'].sum()
+
+--output--
+14860.699999999999
