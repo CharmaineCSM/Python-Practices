@@ -1,0 +1,17 @@
+--Exercise--
+
+In 2010, which continent constituted the most populous immigrant group? Store your answer in a variable named continent.
+
+--Solution--
+
+import pandas as pd 
+df = pd.read_csv('canada.csv')
+
+df_year_status = df[(df['year']==2010)&(df['status']=='Landed immigrants')] #Filter by parameters where year is 2010, and status is immigrant group 
+df_by_continent = df_year_status.groupby('birth').sum().sort_values(by='population (x 1,000)', ascending=False) #group the results by year and sum them together to get the total number, then sort by population in descending order to find the highest number of population
+
+#Run code and check code
+#From the output data, we can see that Asia is on the first row with the highest number of population (x1000) of 2604.5
+#Now, we will just have to create a variable with the answer 
+
+continent = 'Asia'
