@@ -1,0 +1,16 @@
+--Exercise--
+
+What was the lowest annual mean unemployment rate among those born in Canada? 
+Which year was it? Store your answers in variables named mean and year, respectively.
+
+--Solution--
+
+import pandas as pd 
+df = pd.read_csv('canada.csv')
+df1 = df[(df['birth']=='Canada')]
+df1_by_year = df1.groupby('year').mean().sort_values('unemployment_rate (percentage)',ascending=True)
+
+#run code to determine the lowest results for mean and year 
+
+mean = 5.15
+year = 2017
