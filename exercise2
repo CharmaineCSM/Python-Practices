@@ -1,0 +1,16 @@
+--Exercise--
+
+Immigrants from which continent (birth column) had the highest mean employment rate in the entire observation period? 
+What was that mean? Store the continent in a variable named continent and the mean rounded to integer in a mean variable.
+
+--Solutions--
+
+import pandas as pd 
+df = pd.read_csv('canada.csv')
+df_by_birth = df.groupby('birth').mean().sort_values(by='employment_rate (percentage)', ascending=0) #first I grouped them by birth column, and sorted by the employment rate column by descending order
+
+#run code to see which continent is on the top row, which highest mean of employment rate = 64.3166666667, Latin America	
+#Now, we will have to store these answers in new variables named continent and mean
+
+continent = 'Latin America'
+mean = 64
