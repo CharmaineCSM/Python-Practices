@@ -1,0 +1,84 @@
+#USING DEF AND RETURNS 
+def greet(lang):
+    if lang == 'fr':
+        return 'Bonjour'
+    elif lang == 'spn':
+        return 'Ola'
+    else:
+        return 'Bonjour'
+
+lang = input('Please choose fr or spn: ')
+name = input('What is your name?: ')
+
+print(greet(lang), name)
+
+'''4.6 Write a program to prompt the user for hours and rate per hour using 
+input to compute gross pay. Pay should be the normal rate for hours up to 40 and 
+time-and-a-half for the hourly rate for all hours worked above 40 hours. 
+Put the logic to do the computation of pay in a function called computepay() 
+and use the function to do the computation. The function should return a value. 
+Use 45 hours and a rate of 10.50 per hour to test the program (the pay should be 498.75). 
+You should use input to read a string and float() to convert the string to a number. 
+Do not worry about error checking the user input unless you want to - you can assume the 
+user types numbers properly. Do not name your variable sum or use the sum() function.'''
+
+def computepay(grosspay):
+    if grosspay <= 40:
+        return grosspay
+    else:
+        return (40*rate) + ((hrs-40)*(rate*1.5))
+
+hrs = input("Enter Hours:")
+hrs = float(hrs)
+rate = input("Enter rate per hour:")
+rate = float(rate) 
+
+grosspay = hrs*rate
+
+print('Pay', computepay(grosspay))
+
+'''EXERCISE 1 from https://pynative.com/python-functions-exercise-with-solutions/
+Write a program to create a function that takes two arguments, name and age, 
+and print their value.'''
+
+#create a function 
+def details(name, age):
+    return name, age
+
+name = input('What is your name?:')
+age = input('Which year were you born in?: ')
+age = 2022 - int(age)
+
+#call function
+print('Your name and age is', details(name, age))
+
+#suspect that the output of function has brackets because data types within the parantheses are different
+
+'''EXERCISE 2 Create a function with variable length of arguments
+Write a program to create function func1() to accept a variable length of 
+arguments and print their value.
+
+Note: Create a function in such a way that we can pass any number of arguments
+ to this function, and the function should process them and display each argument’s value'''
+ 
+def func1(*args): #The special syntax *args in function definitions in python is used to pass a variable number of arguments to a function. It is used to pass a non-key worded, variable-length argument list. The syntax is to use the symbol * to take in a variable number of arguments; by convention, it is often used with the word args.
+    for i in args:
+      print(i)
+
+func1(20,40,60)
+func1(80, 100)        
+
+'''EXERCISE 3  RETURN MULTIPLE VALUES FROM A FUNCTION
+ Write a program to create function calculation() such that it can 
+ accept two variables and calculate addition and subtraction. Also, 
+ it must return both addition and subtraction in a single return call. ''' 
+
+def calculation(a,b):
+    addition = a + b
+    substraction = a - b
+    return addition, substraction
+
+a = int(input('Type a number: '))
+b = int(input('one more: '))
+
+print('The sum and substraction of the two numbers are:', calculation(a,b))
