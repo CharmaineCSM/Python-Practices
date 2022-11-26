@@ -82,3 +82,37 @@ a = int(input('Type a number: '))
 b = int(input('one more: '))
 
 print('The sum and substraction of the two numbers are:', calculation(a,b))
+
+'''EXERCISE 3 
+Write a program to create a recursive function 
+to calculate the sum of numbers from 0 to 10.
+
+A recursive function is a function that calls itself again and again.'''
+
+
+def summation(number):
+    if number:
+        return number + summation(number-1)
+    else:
+        return 0
+
+res = summation(10)
+
+print(res)
+ 
+'''EXERCISE 4'''
+def display_student(name, age):
+    print(name, age)
+
+display_student("Emma", 26)
+
+'''show_student(name, age)'''
+'''code so that the function can be called with a different name as above'''
+
+def display_student(name, age):
+    print(name, age)
+    
+show_student = display_student 
+
+show_student("Emma", 26)
+ 
