@@ -1,0 +1,41 @@
+''' 
+Question: 
+A Caesar cipher is a simple substitution cipher in which each letter of the plain text is substituted with a letter found by moving n places down the alphabet. For example, assume the input plain text is the following:
+
+abcd xyz
+If the shift value, n, is 4, then the encrypted text would be the following:
+
+efgh bcd
+You are to write a function that accepts two arguments, a plain-text message and a number of letters to shift in the cipher. The function will return an encrypted string with all letters transformed and all punctuation and whitespace remaining unchanged.
+
+Note: You can assume the plain text is all lowercase ASCII except for whitespace and punctuation.
+'''
+
+Solution:
+#importing letters from alphabets
+import string
+alphabets = string.ascii_lowercase
+
+def caesar(text, shift_num):
+    mask = alphabets[shift_num:] + alphabets[:shift_num]
+    transtab = str.maketrans(alphabets, mask)
+    return new_text = text.translate(transtab)
+ 
+print("abd", 3)
+
+output --> deg
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Explanation:
+
+1. line 18 create mask which will shift the first 3 numbers (n) to the back of the alphabets:
+defghijklmnopqrstuvwxyzabc
+
+2. the maketrans() module will replace the original alphabet letters with the new "mask" version created:
+abcdefghijklmnopqrstuvwxyz to
+defghijklmnopqrstuvwxyzabc
+
+3. and now translate() it will use the text we have and map the letters we had previous to the new mask version
+a -> d
+b -> e
+d -> g
