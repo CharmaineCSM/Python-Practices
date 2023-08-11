@@ -1,0 +1,37 @@
+'''
+Question1: Calculate the STD of elements in a list. Return float "NaN" if input is 1 or 0. 
+'''
+
+Solution:
+from math import sqrt
+from statistics import mean
+
+numbers = [1, 2, 3, 4]
+
+def std_dev(numbers):
+    if len(numbers) > 1:
+        avg = mean(numbers)
+        var = sum((i - avg) ** 2 for i in numbers) / (len(numbers) - 1)
+        std = sqrt(var)
+        return round(std,2)
+    return float('NaN')
+
+print(std_dev(numbers))
+
+'''
+Question2: Calculate RMSE(root mean square error) of a model. The function takes in 2 lists: one with actual values, one with predicted values. 
+'''
+
+Solution:
+import math
+
+y_true = [1, 2, 3, 4]
+y_pred = [1, 2, 4, 3]
+
+def RMSE(y_true, y_pred):
+    #only execute code on the numbers with the same length, will not error if one list is longer
+    len(y_true) == len(y_pred)
+    sum_of_squares = sum((x-y)**2 for x, y in zip(y_true, y_pred))
+    return math.sqrt(sum_of_squares / len(y_true))
+    
+print(RMSE(y_true, y_pred))
