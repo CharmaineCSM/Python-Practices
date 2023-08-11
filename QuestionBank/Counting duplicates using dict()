@@ -48,4 +48,17 @@ def counter(list_id):
 
 print(counter(list_id))
 
-Output -->{'ID': 1, 'IN': 1, 'PL': 1}
+Output --> {'ID': 2, 'IN': 2, 'PL': 1}
+
+-------------------------------------------------------------------------------------------------------------------
+Question3:
+Find the top 3 site IDs using the answer above.
+
+def top_counter(list_id):
+    site_id = counter(list_id)
+    top_keys = sorted(site_id, reverse = True, key = site_id.get)[:3]
+    return {key: site_id[key] for key in top_keys]
+
+Output --> {'ID': 2, 'IN': 2, 'PL': 1}
+
+
