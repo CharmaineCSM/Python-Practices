@@ -30,3 +30,26 @@ for x in sample_list:
         duplicates.append(x)
 print(duplicates)
     
+----------------------------------------------------------------------------------------------------------------------------
+Question 2: 
+We have a list of identifiers of form "id-SITE", calculate how many ids we have per site.
+
+Solution:
+
+list_id = ["kajhkasjhdkjhasd-ID", 
+"aksdhkajshdkjhsad-IN", 
+"asjdkajshdkjhsads-IN", 
+"akjsdkjahskdjhsss-ID", 
+"kjshdkjashdhssssa-PL"]
+
+def counter(list_id):
+    ans = {} #create empty dictionary
+    for i in list_id:
+        site = i[-2:] #get last two letters
+        ans[site] = ans.get(i, 0) +1 #add the key (i) into dictionary and the value starting from 0 and +1 for duplicates
+    return ans
+
+print(counter(list_id))
+
+Output -->{'ID': 1, 'IN': 1, 'PL': 1}
+
