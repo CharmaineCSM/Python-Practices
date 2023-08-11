@@ -1,0 +1,17 @@
+'''
+Question:
+
+Palindrome. Is string a palindrome? A palindrome is a word which reads the same backward as forwards.
+
+'''
+
+Solution
+
+s = "ololo"
+
+def is_palindrome(s):
+    return s == s[::-1] #this will return boolean 
+
+print(is_palindrome(s))
+
+Output --> True
