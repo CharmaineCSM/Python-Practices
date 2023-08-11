@@ -1,0 +1,16 @@
+'''
+Question:
+Get the Mean of a series of numbers, if there is no numbers, return a float "NaN"
+'''
+
+Solution:
+num = (1, 2, 3, 4, 5)
+
+def mean(num):
+    if len(num) > 0:
+        mean_calculation= sum(num) / len(num)
+        return mean_calculation
+    else:
+        return float("NaN")
+        
+print(mean(num))
