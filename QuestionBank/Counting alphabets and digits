@@ -1,0 +1,59 @@
+'''
+Question:
+Write a program that accepts a sentence and calculate the number of letters and digits. Suppose the following input is supplied to the program: hello world! 123 Then, the output should be: LETTERS 10 DIGITS 3
+
+Hints: In case of input data being supplied to the question, it should be assumed to be a console input.
+'''
+Solution 1: Using alphabet library but cannot account for symbols if ever required
+
+import string
+alpha = list(string.ascii_lowercase)
+# print(alpha)
+
+sentence = input()
+sentence = str(sentence)
+
+count_letters = 0
+count_digits = 0
+
+for x in sentence:
+    if x in alpha:
+        count_letters +=1
+    else:
+        count_digits += 1
+
+print(f"LETTERS {count_letters} DIGITS {count_digits}")
+------------------------------------------------------------------------------------------------------------------------------------------
+Solution 2: Model answer, creating a dictionary with keys and values
+s = input()
+d = {"DIGITS":0, "LETTERS":0}
+
+for letter in s:
+    if letter.isdigit():
+        d["DIGITS"] +=1
+    elif letter.isalpha():
+        d["LETTERS"] +=1
+    else:
+        pass
+
+print("LETTERS", d["LETTERS"])
+print("DIGITS", d["DIGITS"])
+--------------------------------------------------------------------------------------------------------------------------------------------
+Solution 3: Hybrid between model ans and self ans
+sentence = input()
+sentence = str(sentence)
+
+count_letters = 0
+count_digits = 0
+
+for x in sentence:
+    if x.isalpha():
+        count_letters +=1
+    elif x.isdigit():
+        count_digits += 1
+    else:
+        pass
+
+
+print(f"LETTERS {count_letters} DIGITS {count_digits}")
+
