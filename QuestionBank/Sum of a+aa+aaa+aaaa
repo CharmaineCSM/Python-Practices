@@ -1,0 +1,37 @@
+'''
+Question:
+Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a. 
+Suppose the following input is supplied to the program: 9 Then, the output should be: 11106
+
+Hints: In case of input data being supplied to the question, it should be assumed to be a console input.
+'''
+
+Solution: Model ans
+a = input()
+n1 = int( "%s" % a )
+n2 = int( "%s%s" % (a,a) )
+n3 = int( "%s%s%s" % (a,a,a) )
+n4 = int( "%s%s%s%s" % (a,a,a,a) )
+print(n1+n2+n3+n4)
+
+Solution 2: self ans using loop 
+
+num = 9 #or input()
+num_list = []
+for j in range(1,5):
+    num1 = str(num) #changing the number to string so that it will print multiple times, rather than multiplying numbers together
+    newnum = j*num1 #print the number j times 5, 55, 555, 5555,... 
+    if newnum not in num_list:
+        num_list.append(newnum) #make a new list with the new numbers
+    
+print(num_list)
+
+total = 0
+
+for i in num_list:
+    conversion_int = int(i) #to do calculation, type must be converted to integers from string
+    #print(conversion_int)
+    total += conversion_int #summing up the numbers in num_list
+
+print(total)
+
