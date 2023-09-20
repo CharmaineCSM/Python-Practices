@@ -1,0 +1,13 @@
+def twoNumberSum(array, targetSum):
+    result_array = []
+
+    for i in range(0, len(array)-1):
+        #second loop range must include the last number, e.g if there is only 2 elements in an array 
+        for j in range(i+1, len(array)):
+            sum_of_nums = array[i] + array[j]
+            #print(sum_of_nums)
+            if sum_of_nums == targetSum:
+                result_array.append(array[i])
+                result_array.append(array[j])
+    return result_array
+
