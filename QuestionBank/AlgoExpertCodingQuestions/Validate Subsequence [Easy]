@@ -1,0 +1,8 @@
+def isValidSubsequence(array, sequence):
+    main_idx = 0
+    seq_idx = 0
+    while main_idx < len(array) and seq_idx < len(sequence):
+        if sequence[seq_idx] == array[main_idx]:
+            seq_idx += 1 #move to check next number in sequence array
+        main_idx += 1 #keep moving in main array
+    return seq_idx == len(sequence)
