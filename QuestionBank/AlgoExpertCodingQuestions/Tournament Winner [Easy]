@@ -1,0 +1,19 @@
+def tournamentWinner(competitions, results):
+
+    teamPoints = {}
+    currentWinner = "", 0
+
+    for competition, result in zip(competitions, results):
+        winner = competition[not result] # winner has opposite of value in results
+        loser = competition[result] 
+        
+        if winner not in teamPoints: 
+            #add team and initiate with zero first
+            teamPoints[winner] = 0
+        #if team wins, add 3 points
+        teamPoints[winner]+= 3
+
+        if teamPoints[winner] > currentWinner[1]:
+            currentWinner = winner, teamPoints[winner]
+
+    return currentWinner[0]
