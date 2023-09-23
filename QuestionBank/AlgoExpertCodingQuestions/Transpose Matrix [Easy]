@@ -1,0 +1,12 @@
+def transposeMatrix(matrix):
+    transposedMatrix = []
+
+    #for all columns in matrix, create a new row
+    for col in range(0, len(matrix[0])):
+        newRow = [] #new row created
+        #for each element in each row, append to newrow with element of the first col in each rows
+        for row in range(len(matrix)):
+            newRow.append(matrix[row][col])
+        transposedMatrix.append(newRow)
+
+    return transposedMatrix
